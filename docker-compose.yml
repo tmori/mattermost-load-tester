@@ -1,0 +1,22 @@
+version: "3"
+services:
+
+  php:
+    restart: always
+    container_name: "php"
+    build: ./php
+    tty: true
+    networks:
+      base_network:
+        ipv4_address: 192.168.12.12
+    working_dir: /root/workspace
+    volumes:
+      - ./php/hako/:/root/workspace
+
+networks:
+  base_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.12.0/24
