@@ -6,6 +6,8 @@ services:
     container_name: "php"
     build: ./php
     tty: true
+    environment:
+      - MATTERMOST_URL=192.168.11.52:8088/mattermost
     networks:
       base_network:
         ipv4_address: 192.168.12.12

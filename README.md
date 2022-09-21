@@ -3,6 +3,9 @@ TODO
 
 # インストール手順
 
+docker-compose.yml の `MATTERMOST_URL` を適切なものに変更してください。
+
+
 ```
 docker-compose build
 ```
