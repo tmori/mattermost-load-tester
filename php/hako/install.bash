@@ -13,5 +13,5 @@ composer require gnello/laravel-mattermost-driver
 php artisan vendor:publish --provider="Gnello\Mattermost\Laravel\MattermostServiceProvider"
 
 # create command
-php artisan make:command MattermostTest
-cp ../apps/MattermostTest.php app/Console/Commands/
+php artisan make:command MattermostLogin
+cp ../apps/MattermostLogin.php app/Console/Commands/

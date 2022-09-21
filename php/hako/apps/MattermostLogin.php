@@ -5,21 +5,21 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use \Gnello\Mattermost\Driver;
 
-class MattermostTest extends Command
+class MattermostLogin extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:MattermostTest {login_id} {password}';
+    protected $signature = 'mattermost:login {login_id} {password}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Do Mattermost test';
+    protected $description = 'login & logout';
 
     /**
      * Execute the console command.
@@ -42,13 +42,28 @@ class MattermostTest extends Command
         ]);
          
         try {
+            /*
+             * Login
+             */
+            echo "##START: LOGIN\n";
             $driver = new Driver($container);
             $result = $driver->authenticate();    
             $code = strval($result->getStatusCode());
             $phrase = $result->getReasonPhrase();
             echo "code=${code} : ${phrase}\n";
             echo "token=" . $result->getHeader('Token')[0] ."\n";
-            echo $result->getBody();
+            echo "body=" . $result->getBody() . "\n";
+
+            /*
+             * Logout
+             */
+            echo "##LOGOUT\n";
+            $result = $driver->getUserModel()->logoutOfUserAccount();
+            $code = strval($result->getStatusCode());
+            $phrase = $result->getReasonPhrase();
+            echo "code=${code} : ${phrase}\n";
+            echo "body=" . $result->getBody() . "\n";
+            
         } catch (Exception  $e) {
             echo $e->getMessage().PHP_EOL;
         }
