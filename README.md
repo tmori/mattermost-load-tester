@@ -11,7 +11,7 @@
 - [X] チャネルの新規追加サンプル
 - [X] チームへのユーザ登録サンプル
 - [X] チャネルへのユーザ登録サンプル
-- [ ] チャネルへのメッセージ投稿サンプル
+- [X] チャネルへのメッセージ投稿サンプル
 
 # 前提とする環境
 
@@ -168,3 +168,19 @@ php artisan mattermost:add_user_to_channel <team_name> <channel_name> <username>
 
 参照：
 https://api.mattermost.com/#tag/channels/operation/AddChannelMember
+
+
+# チャネルへのメッセージ投稿サンプル
+
+ソースファイル：[MattermostCreatePost.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreatePost.php)
+
+
+事前に、管理者のユーザIDとパスワードを環境変数として登録してください。
+
+実行方法：
+```
+php artisan mattermost:create_post <username> <passwd> <team_name> <channel_name> <message>
+```
+
+参照：
+https://api.mattermost.com/#tag/posts/operation/CreatePost

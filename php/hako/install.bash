@@ -36,3 +36,6 @@ cp ../apps/MattermostAddUserToTeam.php app/Console/Commands/
 
 php artisan make:command MattermostAddUserToChannel
 cp ../apps/MattermostAddUserToChannel.php app/Console/Commands/
+
+php artisan make:command MattermostCreatePost
+cp ../apps/MattermostCreatePost.php app/Console/Commands/
