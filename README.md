@@ -7,8 +7,8 @@
 
 - [X] ユーザのログインサンプル
 - [X] ユーザの新規追加サンプル
-- [ ] チームの新規追加サンプル
-- [ ] チャネルの新規追加サンプル
+- [X] チームの新規追加サンプル
+- [X] チャネルの新規追加サンプル
 - [ ] チームへのユーザ登録サンプル
 - [ ] チャネルへのユーザ登録サンプル
 - [ ] チャネルへのメッセージ投稿サンプル
@@ -79,3 +79,50 @@ export MATTERMOST_ROOT_PASSWD=hogehoge-Hoge
 ```
 php artisan mattermost:create_user <username> <passward>
 ```
+
+参照：
+https://api.mattermost.com/#tag/users/operation/CreateUser
+
+
+# チームの新規追加サンプル
+
+ソースファイル：[MattermostCreateTeam.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreateTeam.php)
+
+
+事前に、管理者のユーザIDとパスワードを環境変数として登録してください。
+
+設定例：
+```
+export MATTERMOST_ROOT_USER=root
+export MATTERMOST_ROOT_PASSWD=hogehoge-Hoge
+```
+
+実行方法：
+```
+php artisan mattermost:create_team <name> <display_name> <type>
+```
+
+参照：
+https://api.mattermost.com/#tag/teams/operation/CreateTeam
+
+
+# チャネルの新規追加サンプル
+
+ソースファイル：[MattermostCreateChannel.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreateChannel.php)
+
+
+事前に、管理者のユーザIDとパスワードを環境変数として登録してください。
+
+設定例：
+```
+export MATTERMOST_ROOT_USER=root
+export MATTERMOST_ROOT_PASSWD=hogehoge-Hoge
+```
+
+実行方法：
+```
+php artisan mattermost:create_channel <team_name> <channel_name> <display_name> <type>
+```
+
+参照：
+https://api.mattermost.com/#tag/channels/operation/CreateChannel

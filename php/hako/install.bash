@@ -18,3 +18,9 @@ cp ../apps/MattermostLogin.php app/Console/Commands/
 
 php artisan make:command MattermostCreateUser
 cp ../apps/MattermostCreateUser.php app/Console/Commands/
+
+php artisan make:command MattermostCreateTeam
+cp ../apps/MattermostCreateTeam.php app/Console/Commands/
+
+php artisan make:command MattermostCreateChannel
+cp ../apps/MattermostCreateChannel.php app/Console/Commands/
