@@ -3,6 +3,15 @@
 
 - [x] [Mattermost API](https://api.mattermost.com/) を [Laravel PHP ドライバ](https://github.com/gnello/laravel-mattermost-driver)を使って実行するための方法
 
+サンプルアプリとしては、以下の laravel コマンドを用意しています。
+
+- [ ] ユーザの新規追加サンプル
+- [ ] チームの新規追加サンプル
+- [ ] チャネルの新規追加サンプル
+- [ ] チームへのユーザ登録サンプル
+- [ ] チャネルへのユーザ登録サンプル
+- [ ] チャネルへのメッセージ投稿サンプル
+
 # 前提とする環境
 
 - Mattermost がインストールされていること
