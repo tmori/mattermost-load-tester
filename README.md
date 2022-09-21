@@ -7,6 +7,7 @@
 
 - Mattermost がインストールされていること
   - [MattermostをUbuntu20.0.4 サーバにインストールする手順](https://qiita.com/kanetugu2018/items/51cdab279d81ae06aa70)
+- MattermostのURLは、https でアクセスできること
 - docker-compose が利用できる環境であること
 
 
