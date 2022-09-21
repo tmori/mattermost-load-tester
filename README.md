@@ -64,7 +64,7 @@ php artisan mattermost:login <login_id> <passward>
 
 # ユーザの新規追加サンプル
 
-ソースファイル：[MattermostLogin.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreateUser.php)
+ソースファイル：[MattermostCreateUser.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreateUser.php)
 
 
 事前に、管理者のユーザIDとパスワードを環境変数として登録してください。
