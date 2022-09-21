@@ -1,5 +1,14 @@
 # 概要
-TODO
+本リポジトリでは、以下を整理しています。
+
+- [x] [Mattermost API](https://api.mattermost.com/) を [Laravel PHP ドライバ](https://github.com/gnello/laravel-mattermost-driver)を使って実行するための方法
+
+# 前提とする環境
+
+- Mattermost がインストールされていること
+  - [MattermostをUbuntu20.0.4 サーバにインストールする手順](https://qiita.com/kanetugu2018/items/51cdab279d81ae06aa70)
+- docker-compose が利用できる環境であること
+
 
 # インストール手順
 
@@ -21,6 +30,10 @@ docker-compose exec php /bin/bash
 ```
 bash install.bash
 ```
+
+# サンプルアプリ実行手順
+
+TODO
 
 # 終了方法
 
