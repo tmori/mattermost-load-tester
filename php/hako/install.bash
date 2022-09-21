@@ -15,3 +15,6 @@ php artisan vendor:publish --provider="Gnello\Mattermost\Laravel\MattermostServi
 # create command
 php artisan make:command MattermostLogin
 cp ../apps/MattermostLogin.php app/Console/Commands/
+
+php artisan make:command MattermostCreateUser
+cp ../apps/MattermostCreateUser.php app/Console/Commands/

@@ -6,7 +6,7 @@
 サンプルアプリとしては、以下の laravel コマンドを用意しています。
 
 - [X] ユーザのログインサンプル
-- [ ] ユーザの新規追加サンプル
+- [X] ユーザの新規追加サンプル
 - [ ] チームの新規追加サンプル
 - [ ] チャネルの新規追加サンプル
 - [ ] チームへのユーザ登録サンプル
@@ -62,3 +62,20 @@ php artisan mattermost:login <login_id> <passward>
 ```
 
 
+# ユーザの新規追加サンプル
+
+ソースファイル：[MattermostLogin.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreateUser.php)
+
+
+事前に、管理者のユーザIDとパスワードを環境変数として登録してください。
+
+設定例：
+```
+export MATTERMOST_ROOT_USER=root
+export MATTERMOST_ROOT_PASSWD=hogehoge-Hoge
+```
+
+実行方法：
+```
+php artisan mattermost:create_user <username> <passward>
+```
