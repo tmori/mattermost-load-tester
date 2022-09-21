@@ -2,6 +2,7 @@
 
 namespace App\Libs;
 
+use \Exception;
 use \Gnello\Mattermost\Driver;
 
 class MattermostUtils {
@@ -31,18 +32,36 @@ class MattermostUtils {
 
     public static function getTeamId($driver, $team_name)
     {
-        echo "##START: TeamName=" . $team_name . "\n";
         $result = $driver->getTeamModel()->getTeamByName($team_name);
+        if ($result->getStatusCode() != 200) {
+            throw new \Exception('Can not find team_id for ' . $team_name);
+        }
+        $code = strval($result->getStatusCode());
+        $phrase = $result->getReasonPhrase();
         $res = $result->getBody();
         $jsonstr =  json_decode($res, true);
         $team_id = $jsonstr['id'];
-        echo "team_id=" . $team_id . "\n";
         return $team_id;
     }
+    public static function getChannelId($driver, $team_id, $channel_name)
+    {
+        $result = $driver->getChannelModel()->getChannelByName($team_id, $channel_name);
+        if ($result->getStatusCode() != 200) {
+            throw new \Exception('Can not find channel_id for ' . $channel_name);
+        }
+        $res = $result->getBody();
+        $jsonstr =  json_decode($res, true);
+        $channel_id = $jsonstr['id'];
+        return $channel_id;
+    }
+
     public static function getUserId($driver, $username)
     {
         echo "##START: UserName=" . $username . "\n";
         $result = $driver->getUserModel()->getUserByUsername($username);
+        if ($result->getStatusCode() != 200) {
+            throw new \Exception('Can not find user_id for ' . $username);
+        }
         $res = $result->getBody();
         $jsonstr =  json_decode($res, true);
         $user_id = $jsonstr['id'];
