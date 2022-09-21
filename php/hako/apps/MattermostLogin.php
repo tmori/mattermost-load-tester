@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use \Gnello\Mattermost\Driver;
+use \App\Libs\MattermostUtils;
 
 class MattermostLogin extends Command
 {
@@ -28,42 +29,21 @@ class MattermostLogin extends Command
      */
     public function handle()
     {
-        ini_set('display_errors', 1);
-        ini_set('error_reporting', E_ALL);
-        $container = new \Pimple\Container([
-            'driver' => [
-                'url' => getenv('MATTERMOST_URL'),
-                'login_id' => $this->argument('login_id'),
-                'password' => $this->argument('password'),
-            ],
-            'guzzle' => [
-                'verify' => false
-            ]
-        ]);
-         
         try {
+            MattermostUtils::initialize();
             /*
              * Login
              */
-            echo "##START: LOGIN\n";
-            $driver = new Driver($container);
-            $result = $driver->authenticate();    
-            $code = strval($result->getStatusCode());
-            $phrase = $result->getReasonPhrase();
-            echo "code=${code} : ${phrase}\n";
-            echo "token=" . $result->getHeader('Token')[0] ."\n";
-            echo "body=" . $result->getBody() . "\n";
-
+            $driver = MattermostUtils::createDriver(
+                $this->argument('login_id'),
+                $this->argument('password'),
+                false
+            );
+            MattermostUtils::login($driver);
             /*
              * Logout
              */
-            echo "##LOGOUT\n";
-            $result = $driver->getUserModel()->logoutOfUserAccount();
-            $code = strval($result->getStatusCode());
-            $phrase = $result->getReasonPhrase();
-            echo "code=${code} : ${phrase}\n";
-            echo "body=" . $result->getBody() . "\n";
-            
+            MattermostUtils::logout($driver);
         } catch (Exception  $e) {
             echo $e->getMessage().PHP_EOL;
         }

@@ -12,6 +12,12 @@ composer require psr/simple-cache=^2.0
 composer require gnello/laravel-mattermost-driver
 php artisan vendor:publish --provider="Gnello\Mattermost\Laravel\MattermostServiceProvider"
 
+# create Libs
+mkdir app/Libs
+cp ../libs/MattermostUtils.php app/Libs
+cp ../libs/composer.json .
+composer dump-autoload
+
 # create command
 php artisan make:command MattermostLogin
 cp ../apps/MattermostLogin.php app/Console/Commands/

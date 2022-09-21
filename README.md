@@ -42,9 +42,6 @@ docker-compose exec php /bin/bash
 bash install.bash
 ```
 
-# サンプルアプリ実行手順
-
-TODO
 
 # 終了方法
 
