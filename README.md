@@ -5,7 +5,7 @@
 
 サンプルアプリとしては、以下の laravel コマンドを用意しています。
 
-- [ ] ユーザのログインサンプル
+- [X] ユーザのログインサンプル
 - [ ] ユーザの新規追加サンプル
 - [ ] チームの新規追加サンプル
 - [ ] チャネルの新規追加サンプル
@@ -51,3 +51,14 @@ TODO
 ```
 docker-compose down
 ```
+
+# ユーザのログインサンプル
+
+ソースファイル：MattermostLogin.php
+
+実行方法：
+```
+php artisan mattermost:login <login_id> <passward>
+```
+
+
