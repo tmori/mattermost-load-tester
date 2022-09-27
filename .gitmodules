@@ -1,0 +1,3 @@
+[submodule "web-server-load-tester"]
+	path = web-server-load-tester
+	url = https://github.com/tmori/web-server-load-tester.git

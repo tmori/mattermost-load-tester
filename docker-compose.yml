@@ -14,6 +14,7 @@ services:
     working_dir: /root/workspace
     volumes:
       - ./php/hako/:/root/workspace
+      - ./web-server-load-tester/:/root/workspace/web-server-load-tester
 
 networks:
   base_network:
