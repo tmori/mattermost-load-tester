@@ -16,4 +16,4 @@ RID=${2}
 
 tlog "ID=${ID}, RID=${RID}:DOING LOGIN TEST..."
 cd ${MATTERMOST_PHP_TESTDIR}
-tlog "ID=${ID}, RID=${RID}:`php artisan mattermost:login tmori Password-999`"
+tlog "ID=${ID}, RID=${RID}:`php artisan mattermost:login user-1 Password-999`"
