@@ -3,4 +3,4 @@
 	url = git@github.com:tmori/web-server-load-tester.git
 [submodule "mattermost-initializer"]
 	path = mattermost-initializer
-	url = https://github.com/tmori/mattermost-initializer.git
+	url = git@github.com:tmori/mattermost-initializer.git

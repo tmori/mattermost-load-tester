@@ -15,6 +15,7 @@ services:
     volumes:
       - ./php/hako/:/root/workspace
       - ./web-server-load-tester/:/root/workspace/web-server-load-tester
+      - ./mattermost-initializer/:/root/workspace/mattermost-initializer
 
 networks:
   base_network:
