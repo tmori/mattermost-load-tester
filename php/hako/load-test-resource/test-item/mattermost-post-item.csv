@@ -1,6 +1,0 @@
-No,Multiplicity,SetUp,TearDown,Prepare,Do,Done,DoRepeatNum
-1,1,create-user(10),down,nop,post(1:256),nop,10
-2,10,create-user(20),down,nop,post(10:256),nop,10
-3,20,create-user(30),down,nop,post(20:256),nop,10
-4,40,create-user(50),down,nop,post(40:256),nop,10
-5,80,create-user(100),down,nop,post(80:256),nop,10
