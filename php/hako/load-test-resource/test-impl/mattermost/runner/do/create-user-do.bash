@@ -7,7 +7,7 @@ then
 fi
 ID=${1}
 RID=${2}
-USER_NUM=${1}
+USER_NUM=${3}
 
 if [ -z ${TEST_TARGET} ]
 then
@@ -16,7 +16,7 @@ fi
 
 source ${TEST_LOGGER}
 
-tlog "SETUP TEST..."
+tlog "SETUP TEST... : USER_NUM=${USER_NUM}"
 bash test-utils/remote_script.bash ${MATTERMOST_TOOL_DIR}/bin/mm-start.bash ${MATTERMOST_TOOL_DIR}
 bash test-utils/remote_script.bash ${MATTERMOST_TOOL_DIR}/test-data/create.bash ${USER_NUM} ${MATTERMOST_TOOL_DIR}
 bash test-utils/remote_script.bash ${MATTERMOST_TOOL_DIR}/batch/setup.bash ${MATTERMOST_TOOL_DIR}
