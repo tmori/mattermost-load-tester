@@ -29,4 +29,7 @@ CHANNEL="channel-01"
 
 cd ${MATTERMOST_PHP_TESTDIR}
 tlog "OP: php artisan mattermost:create_post ${USER_ID} Password-999 ${TEAM} ${CHANNEL} \"${MESSAGE}\""
-tlog "ID=${ID}, RID=${RID}:`php artisan mattermost:create_post ${USER_ID} Password-999 ${TEAM} ${CHANNEL} \"${MESSAGE}\"`"
+php artisan mattermost:create_post ${USER_ID} Password-999 ${TEAM} ${CHANNEL} "${MESSAGE}" | tee tmp_${ID}.txt
+
+tlog "ID=${ID}, RID=${RID}:`cat tmp_${ID}.txt`"
+rm -f tmp_${ID}.txt
