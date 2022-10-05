@@ -1,60 +1,13 @@
-INFO: 2022年 10月  5日 水曜日 08:11:19 JST : SETUP TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : MEM_GB=2.77826
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : CPU_IDLE=98.537
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=4:PREPARE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=3:PREPARE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=2:PREPARE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=5:PREPARE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=3, RID=1:DOING LOGIN TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=2, RID=1:DOING LOGIN TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=1:PREPARE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=4, RID=1:DOING LOGIN TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=1, RID=1:DOING LOGIN TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=5, RID=1:DOING LOGIN TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=4, RID=1:##START: LOGIN
-code=200 : OK
-body={"id":"zikjrk45updubr8a63zrnq4aor","create_at":1664860676581,"update_at":1664860706909,"delete_at":0,"username":"user-1","auth_data":"","auth_service":"","email":"user-1@example.com","nickname":"","first_name":"","last_name":"","position":"","roles":"system_user","notify_props":{"channel":"true","comments":"never","desktop":"mention","desktop_sound":"true","desktop_threads":"all","email":"true","email_threads":"all","first_name":"false","mention_keys":"","push":"mention","push_status":"away","push_threads":"all"},"last_password_update":1664860676581,"locale":"en","timezone":{"automaticTimezone":"Asia/Tokyo","manualTimezone":"","useAutomaticTimezone":"true"},"disable_welcome_email":false}
-
-##LOGOUT
-code=200 : OK
-body={"status":"OK"}
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=4:DONE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=3, RID=1:##START: LOGIN
-code=200 : OK
-body={"id":"zikjrk45updubr8a63zrnq4aor","create_at":1664860676581,"update_at":1664860706909,"delete_at":0,"username":"user-1","auth_data":"","auth_service":"","email":"user-1@example.com","nickname":"","first_name":"","last_name":"","position":"","roles":"system_user","notify_props":{"channel":"true","comments":"never","desktop":"mention","desktop_sound":"true","desktop_threads":"all","email":"true","email_threads":"all","first_name":"false","mention_keys":"","push":"mention","push_status":"away","push_threads":"all"},"last_password_update":1664860676581,"locale":"en","timezone":{"automaticTimezone":"Asia/Tokyo","manualTimezone":"","useAutomaticTimezone":"true"},"disable_welcome_email":false}
-
-##LOGOUT
-code=200 : OK
-body={"status":"OK"}
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=3:DONE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ELAPS MS = 203
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : THROUGHPUT = 24.6305
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : RES_TIME_MSEC = 190
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=2, RID=1:##START: LOGIN
-code=200 : OK
-body={"id":"zikjrk45updubr8a63zrnq4aor","create_at":1664860676581,"update_at":1664860706909,"delete_at":0,"username":"user-1","auth_data":"","auth_service":"","email":"user-1@example.com","nickname":"","first_name":"","last_name":"","position":"","roles":"system_user","notify_props":{"channel":"true","comments":"never","desktop":"mention","desktop_sound":"true","desktop_threads":"all","email":"true","email_threads":"all","first_name":"false","mention_keys":"","push":"mention","push_status":"away","push_threads":"all"},"last_password_update":1664860676581,"locale":"en","timezone":{"automaticTimezone":"Asia/Tokyo","manualTimezone":"","useAutomaticTimezone":"true"},"disable_welcome_email":false}
-
-##LOGOUT
-code=200 : OK
-body={"status":"OK"}
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=2:DONE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=5, RID=1:##START: LOGIN
-code=200 : OK
-body={"id":"zikjrk45updubr8a63zrnq4aor","create_at":1664860676581,"update_at":1664860706909,"delete_at":0,"username":"user-1","auth_data":"","auth_service":"","email":"user-1@example.com","nickname":"","first_name":"","last_name":"","position":"","roles":"system_user","notify_props":{"channel":"true","comments":"never","desktop":"mention","desktop_sound":"true","desktop_threads":"all","email":"true","email_threads":"all","first_name":"false","mention_keys":"","push":"mention","push_status":"away","push_threads":"all"},"last_password_update":1664860676581,"locale":"en","timezone":{"automaticTimezone":"Asia/Tokyo","manualTimezone":"","useAutomaticTimezone":"true"},"disable_welcome_email":false}
-
-##LOGOUT
-code=200 : OK
-body={"status":"OK"}
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=5:DONE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=1, RID=1:##START: LOGIN
-code=200 : OK
-body={"id":"zikjrk45updubr8a63zrnq4aor","create_at":1664860676581,"update_at":1664860706909,"delete_at":0,"username":"user-1","auth_data":"","auth_service":"","email":"user-1@example.com","nickname":"","first_name":"","last_name":"","position":"","roles":"system_user","notify_props":{"channel":"true","comments":"never","desktop":"mention","desktop_sound":"true","desktop_threads":"all","email":"true","email_threads":"all","first_name":"false","mention_keys":"","push":"mention","push_status":"away","push_threads":"all"},"last_password_update":1664860676581,"locale":"en","timezone":{"automaticTimezone":"Asia/Tokyo","manualTimezone":"","useAutomaticTimezone":"true"},"disable_welcome_email":false}
-
-##LOGOUT
-code=200 : OK
-body={"status":"OK"}
-INFO: 2022年 10月  5日 水曜日 08:11:32 JST : ID=1:DONE TEST...
-INFO: 2022年 10月  5日 水曜日 08:11:42 JST : MEM_GB=2.77353
-INFO: 2022年 10月  5日 水曜日 08:11:42 JST : CPU_IDLE=98.6478
-INFO: 2022年 10月  5日 水曜日 08:11:42 JST : DISK_MB=0.015625
-INFO: 2022年 10月  5日 水曜日 08:11:42 JST : TEARDOWN TEST...
+INFO: 2022年 10月  5日 水曜日 09:01:46 JST : SETUP TEST...
+INFO: 2022年 10月  5日 水曜日 09:02:07 JST : MEM_GB=2.4815
+INFO: 2022年 10月  5日 水曜日 09:02:07 JST : CPU_IDLE=97.933
+INFO: 2022年 10月  5日 水曜日 09:02:07 JST : ID=1:PREPARE TEST...
+INFO: 2022年 10月  5日 水曜日 09:02:07 JST : SETUP TEST...
+INFO: 2022年 10月  5日 水曜日 09:02:14 JST : ID=1:DONE TEST...
+INFO: 2022年 10月  5日 水曜日 09:02:14 JST : ELAPS MS = 7914
+INFO: 2022年 10月  5日 水曜日 09:02:14 JST : THROUGHPUT = 0.126358
+INFO: 2022年 10月  5日 水曜日 09:02:14 JST : RES_TIME_MSEC = 7890
+INFO: 2022年 10月  5日 水曜日 09:02:25 JST : MEM_GB=2.61685
+INFO: 2022年 10月  5日 水曜日 09:02:25 JST : CPU_IDLE=86.2976
+INFO: 2022年 10月  5日 水曜日 09:02:25 JST : DISK_MB=0.488281
+INFO: 2022年 10月  5日 水曜日 09:02:25 JST : TEARDOWN TEST...
