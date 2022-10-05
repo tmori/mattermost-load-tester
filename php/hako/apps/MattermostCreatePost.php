@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use \Gnello\Mattermost\Driver;
 use \App\Libs\MattermostUtils;
+use \Exception;
 
 class MattermostCreatePost extends Command
 {
@@ -29,7 +30,9 @@ class MattermostCreatePost extends Command
      */
     public function handle()
     {
+        $is_login = False;
         try {
+            echo "START: CREATE POST:" . $this->argument('username') . "\n";
             MattermostUtils::initialize();
             if (MattermostUtils::setAdminUser() != 0) {
                 return 1;
@@ -43,6 +46,7 @@ class MattermostCreatePost extends Command
              * Login
              */
             MattermostUtils::login($driver);
+            $is_login = True;
 
             /*
              * Add User To Team
@@ -51,7 +55,6 @@ class MattermostCreatePost extends Command
             $channel_id = MattermostUtils::getChannelId($driver, $team_id, $this->argument('channel_name'));
             $message = $this->argument('message');
 
-            #echo "##START: CREATE POST\n";
             $result = $driver->getPostModel()->createPost(
                 [
                     'channel_id' => $channel_id,
@@ -65,9 +68,18 @@ class MattermostCreatePost extends Command
              * Logout
              */
             MattermostUtils::logout($driver);
-        } catch (Exception  $e) {
+            $is_login = False;
+            echo "END: CREATE POST:" . $this->argument('username') . "\n";
+        } catch (\Exception  $e) {
+            if ($is_login == True) {
+                MattermostUtils::logout($driver);
+                $is_login = False;
+            }
             echo $e->getMessage().PHP_EOL;
+            echo "ERROR: CREATE POST:" . $this->argument('username') . "\n";
+            return 1;
         }
+
         return 0;
     }
 }

@@ -29,7 +29,19 @@ CHANNEL="channel-01"
 
 cd ${MATTERMOST_PHP_TESTDIR}
 tlog "OP: php artisan mattermost:create_post ${USER_ID} Password-999 ${TEAM} ${CHANNEL} \"${MESSAGE}\""
-php artisan mattermost:create_post ${USER_ID} Password-999 ${TEAM} ${CHANNEL} "${MESSAGE}" | tee tmp_${ID}.txt
 
-tlog "ID=${ID}, RID=${RID}:`cat tmp_${ID}.txt`"
+while [ 1 ]
+do
+    php artisan mattermost:create_post ${USER_ID} Password-999 ${TEAM} ${CHANNEL} "${MESSAGE}" | tee tmp_${ID}.txt
+    tlog "ID=${ID}, RID=${RID}:`cat tmp_${ID}.txt`"
+    grep "END: CREATE POST"  tmp_${ID}.txt > /dev/null
+    if [ $? -eq 0 ]
+    then
+        break
+    else
+        tlog "ERROR... so RETRY: ${USER_ID}"
+        sleep 1
+    fi
+done
+
 rm -f tmp_${ID}.txt

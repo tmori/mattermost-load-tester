@@ -34,7 +34,7 @@ class MattermostUtils {
     {
         $result = $driver->getTeamModel()->getTeamByName($team_name);
         if ($result->getStatusCode() != 200) {
-            throw new \Exception('Can not find team_id for ' . $team_name);
+            throw new \Exception('Can not find team_id for ' . $team_name . " status code=" . strval($result->getStatusCode()));
         }
         $code = strval($result->getStatusCode());
         $phrase = $result->getReasonPhrase();
@@ -47,7 +47,7 @@ class MattermostUtils {
     {
         $result = $driver->getChannelModel()->getChannelByName($team_id, $channel_name);
         if ($result->getStatusCode() != 200) {
-            throw new \Exception('Can not find channel_id for ' . $channel_name);
+            throw new \Exception('Can not find channel_id for ' . $channel_name . " status code=" . strval($result->getStatusCode()));
         }
         $res = $result->getBody();
         $jsonstr =  json_decode($res, true);

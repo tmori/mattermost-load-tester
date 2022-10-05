@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use \Gnello\Mattermost\Driver;
 use \App\Libs\MattermostUtils;
+use \Exception;
 
 class MattermostCreateChannel extends Command
 {
@@ -69,9 +70,10 @@ class MattermostCreateChannel extends Command
              * Logout
              */
             MattermostUtils::logout($driver);
-        } catch (Exception  $e) {
+        } catch (\Exception  $e) {
             echo $e->getMessage().PHP_EOL;
-        }        
+            return 1;
+        }
         return 0;
     }
 }
