@@ -51,14 +51,14 @@ class MattermostCreatePost extends Command
             $channel_id = MattermostUtils::getChannelId($driver, $team_id, $this->argument('channel_name'));
             $message = $this->argument('message');
 
-            echo "##START: CREATE POST\n";
+            #echo "##START: CREATE POST\n";
             $result = $driver->getPostModel()->createPost(
                 [
                     'channel_id' => $channel_id,
                     'message' => $message
                 ]
             );
-            echo "body=" . $result->getBody() . "\n";
+            #echo "body=" . $result->getBody() . "\n";
 
 
             /*

@@ -16,7 +16,7 @@ fi
 
 source ${TEST_LOGGER}
 
-tlog "SETUP TEST... : USER_NUM=${USER_NUM}"
+tlog "DO TEST... : USER_NUM=${USER_NUM}"
 bash test-utils/remote_script.bash ${MATTERMOST_TOOL_DIR}/bin/mm-start.bash ${MATTERMOST_TOOL_DIR}
 bash test-utils/remote_script.bash ${MATTERMOST_TOOL_DIR}/test-data/create.bash ${USER_NUM} ${MATTERMOST_TOOL_DIR}
 bash test-utils/remote_script.bash ${MATTERMOST_TOOL_DIR}/batch/setup.bash ${MATTERMOST_TOOL_DIR}

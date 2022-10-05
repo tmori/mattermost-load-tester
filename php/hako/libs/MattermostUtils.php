@@ -57,7 +57,7 @@ class MattermostUtils {
 
     public static function getUserId($driver, $username)
     {
-        echo "##START: UserName=" . $username . "\n";
+        #echo "##START: UserName=" . $username . "\n";
         $result = $driver->getUserModel()->getUserByUsername($username);
         if ($result->getStatusCode() != 200) {
             throw new \Exception('Can not find user_id for ' . $username);
@@ -65,7 +65,7 @@ class MattermostUtils {
         $res = $result->getBody();
         $jsonstr =  json_decode($res, true);
         $user_id = $jsonstr['id'];
-        echo "user_id=" . $user_id . "\n";
+        #echo "user_id=" . $user_id . "\n";
         return $user_id;
     }
     public static function createDriver($login_id, $password, $verify)
@@ -85,22 +85,22 @@ class MattermostUtils {
 
     public static function login($driver)
     {
-        echo "##START: LOGIN\n";
+        #echo "##START: LOGIN\n";
         $result = $driver->authenticate();    
         $code = strval($result->getStatusCode());
         $phrase = $result->getReasonPhrase();
-        echo "code=${code} : ${phrase}\n";
+        #echo "code=${code} : ${phrase}\n";
         #echo "token=" . $result->getHeader('Token')[0] ."\n";
-        echo "body=" . $result->getBody() . "\n";
+        #echo "body=" . $result->getBody() . "\n";
     }
     public static function logout($driver)
     {
-        echo "##LOGOUT\n";
+        #echo "##LOGOUT\n";
         $result = $driver->getUserModel()->logoutOfUserAccount();
         $code = strval($result->getStatusCode());
         $phrase = $result->getReasonPhrase();
-        echo "code=${code} : ${phrase}\n";
-        echo "body=" . $result->getBody() . "\n";
+        #echo "code=${code} : ${phrase}\n";
+        #echo "body=" . $result->getBody() . "\n";
         return true;
     }
 
