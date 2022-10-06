@@ -17,17 +17,18 @@ RID=${2}
 tlog "ID=${ID}, RID=${RID} :DOING GET POST TEST..."
 
 USER_ID="user-${ID}"
-TEAM="public-room"
-CHANNEL="channel-01"
+#TEAM="public-room"
+#CHANNEL="channel-01"
+CHANNEL_ID="6kzibtx36ibqzfrqmgkwjbum3h"
 
 cd ${MATTERMOST_PHP_TESTDIR}
-tlog "OP: php artisan mattermost:get_post ${USER_ID} Password-999 ${TEAM} ${CHANNEL}"
+tlog "OP: php artisan mattermost:get_post_by_id ${USER_ID} Password-999 ${CHANNEL_ID}"
 
 while [ 1 ]
 do
-    php artisan mattermost:get_post ${USER_ID} Password-999 ${TEAM} ${CHANNEL} | tee tmp_${ID}.txt
+    php artisan mattermost:get_post_by_id ${USER_ID} Password-999 ${CHANNEL_ID} | tee tmp_${ID}.txt
     tlog "ID=${ID}, RID=${RID}:`cat tmp_${ID}.txt`"
-    grep "END: GET POST"  tmp_${ID}.txt > /dev/null
+    grep "END: GET POST by id"  tmp_${ID}.txt > /dev/null
     if [ $? -eq 0 ]
     then
         break

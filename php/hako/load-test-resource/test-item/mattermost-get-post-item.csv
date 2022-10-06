@@ -1,6 +1,7 @@
 No,Multiplicity,SetUp,TearDown,Prepare,Do,Done,DoRepeatNum
-1,1,up,down,nop,get-post,nop,10
-2,10,up,down,nop,get-post,nop,10
-3,20,up,down,nop,get-post,nop,10
-4,40,up,down,nop,get-post,nop,10
-5,80,up,down,nop,get-post,nop,10
+2,10,restore(user800-post2000.sql),down,nop,get-post,nop,10
+3,20,restore(user800-post2000.sql),down,nop,get-post,nop,10
+4,40,restore(user800-post2000.sql),down,nop,get-post,nop,10
+5,80,restore(user800-post2000.sql),down,nop,get-post,nop,10
+6,160,restore(user800-post2000.sql),down,nop,get-post,nop,10
+7,200,restore(user800-post2000.sql),down,nop,get-post,nop,10
