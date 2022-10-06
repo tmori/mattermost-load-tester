@@ -1,6 +1,8 @@
 No,Multiplicity,SetUp,TearDown,Prepare,Do,Done,DoRepeatNum
-1,1,create-user(10),down,nop,create-post(256),nop,10
-2,10,create-user(20),down,nop,create-post(256),nop,10
-3,20,create-user(30),down,nop,create-post(256),nop,10
-4,40,create-user(50),down,nop,create-post(256),nop,10
-5,80,create-user(100),down,nop,create-post(256),nop,10
+1,1,restore(user800-post0.sql),down,nop,create-post(256),nop,10
+2,10,restore(user800-post0.sql),down,nop,create-post(256),nop,10
+3,20,restore(user800-post0.sql),down,nop,create-post(256),nop,10
+4,40,restore(user800-post0.sql),down,nop,create-post(256),nop,10
+5,80,restore(user800-post0.sql),down,nop,create-post(256),nop,10
+6,160,restore(user800-post0.sql),down,nop,create-post(256),nop,10
+7,200,restore(user800-post0.sql),down,nop,create-post(256),nop,10
