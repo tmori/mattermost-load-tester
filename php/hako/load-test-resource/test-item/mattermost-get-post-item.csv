@@ -1,4 +1,5 @@
 No,Multiplicity,SetUp,TearDown,Prepare,Do,Done,DoRepeatNum
+1,1,restore(user800-post2000.sql),down,nop,get-post,nop,10
 2,10,restore(user800-post2000.sql),down,nop,get-post,nop,10
 3,20,restore(user800-post2000.sql),down,nop,get-post,nop,10
 4,40,restore(user800-post2000.sql),down,nop,get-post,nop,10
