@@ -1,25 +1,23 @@
 # 概要
-本リポジトリでは、以下を整理しています。
+`mattermost-load-tester`は、[web-server-load-tester](https://github.com/tmori/web-server-load-tester)を利用して、[Mattermost API](https://api.mattermost.com/)で Mattermost サーバーの負荷テストを行うツールです。
 
-- [x] [Mattermost API](https://api.mattermost.com/) を [Laravel PHP ドライバ](https://github.com/gnello/laravel-mattermost-driver)を使って実行するための方法
+Mattermost APIのコール処理は、以下のドライバを利用しています。
 
-サンプルアプリとしては、以下の laravel コマンドを用意しています。
+- [Mattermost API](https://api.mattermost.com/) を [Laravel PHP ドライバ](https://github.com/gnello/laravel-mattermost-driver)を使って実行するための方法
 
-- [X] ユーザのログインサンプル
-- [X] ユーザの新規追加サンプル
-- [X] チームの新規追加サンプル
-- [X] チャネルの新規追加サンプル
-- [X] チームへのユーザ登録サンプル
-- [X] チャネルへのユーザ登録サンプル
-- [X] チャネルへのメッセージ投稿サンプル
+負荷テストで計測する Mattermost のAPIは以下です。
+
+- [チャネルへのメッセージ投稿](https://api.mattermost.com/#tag/posts/operation/CreatePost)
+- [チャネルのメッセージ参照](https://api.mattermost.com/#tag/posts/operation/GetPostsForChannel)
+
+
 
 # 前提とする環境
 
 - Mattermost がインストールされていること
   - [MattermostをUbuntu20.0.4 サーバにインストールする手順](https://qiita.com/kanetugu2018/items/51cdab279d81ae06aa70)
 - MattermostのURLは、https でアクセスできること
-- docker-compose が利用できる環境であること
-
+- Linux環境で docker-compose が利用できる環境であること(Windows WSLは対象外)
 
 # インストール手順
 
@@ -42,6 +40,11 @@ docker-compose exec php /bin/bash
 bash install.bash
 ```
 
+テスト自動化していますので、パスワードなしで ssh で Mattermostサーバーマシンにログインできる必要があります。
+以下の記事が参考になります。
+
+https://blog.apar.jp/linux/5336/
+
 
 # 終了方法
 
@@ -49,7 +52,13 @@ bash install.bash
 docker-compose down
 ```
 
-# ユーザのログインサンプル
+
+
+# Mattermost PHPドライバ確認ツール
+
+以下、PHPドライバ確認用のツールの説明です。個別に機能確認したい場合は、ご利用ください。
+
+## ユーザのログインサンプル
 
 ソースファイル：[MattermostLogin.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostLogin.php)
 
@@ -59,7 +68,7 @@ php artisan mattermost:login <login_id> <passward>
 ```
 
 
-# ユーザの新規追加サンプル
+## ユーザの新規追加サンプル
 
 ソースファイル：[MattermostCreateUser.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreateUser.php)
 
@@ -81,7 +90,7 @@ php artisan mattermost:create_user <username> <passward>
 https://api.mattermost.com/#tag/users/operation/CreateUser
 
 
-# チームの新規追加サンプル
+## チームの新規追加サンプル
 
 ソースファイル：[MattermostCreateTeam.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreateTeam.php)
 
@@ -103,7 +112,7 @@ php artisan mattermost:create_team <name> <display_name> <type>
 https://api.mattermost.com/#tag/teams/operation/CreateTeam
 
 
-# チャネルの新規追加サンプル
+## チャネルの新規追加サンプル
 
 ソースファイル：[MattermostCreateChannel.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreateChannel.php)
 
@@ -126,7 +135,7 @@ https://api.mattermost.com/#tag/channels/operation/CreateChannel
 
 
 
-# チームへのユーザ登録サンプル
+## チームへのユーザ登録サンプル
 
 ソースファイル：[MattermostAddUserToTeam.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostAddUserToTeam.php)
 
@@ -170,7 +179,7 @@ php artisan mattermost:add_user_to_channel <team_name> <channel_name> <username>
 https://api.mattermost.com/#tag/channels/operation/AddChannelMember
 
 
-# チャネルへのメッセージ投稿サンプル
+## チャネルへのメッセージ投稿サンプル
 
 ソースファイル：[MattermostCreatePost.php](https://github.com/tmori/tutorial_mattermost/blob/main/php/hako/apps/MattermostCreatePost.php)
 
