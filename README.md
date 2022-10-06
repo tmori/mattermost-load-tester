@@ -3,14 +3,42 @@
 
 Mattermost APIのコール処理は、以下のドライバを利用しています。
 
-- [Mattermost API](https://api.mattermost.com/) を [Laravel PHP ドライバ](https://github.com/gnello/laravel-mattermost-driver)を使って実行するための方法
+- [Laravel PHP ドライバ](https://github.com/gnello/laravel-mattermost-driver)
 
 負荷テストで計測する Mattermost のAPIは以下です。
 
 - [チャネルへのメッセージ投稿](https://api.mattermost.com/#tag/posts/operation/CreatePost)
 - [チャネルのメッセージ参照](https://api.mattermost.com/#tag/posts/operation/GetPostsForChannel)
 
+また、負荷テストに必要なMattermostのテストデータは [mattermost-initializer](https://github.com/tmori/mattermost-initializer)を利用して作成します。
 
+# テスト項目
+
+[web-server-load-tester](https://github.com/tmori/web-server-load-tester)の機能を利用することで、テスト項目はCSVファイルで作成し、そのままテストを自動実行させます。
+
+## チャネルへのメッセージ投稿
+
+最大で２００多重で２５６文字のランダム文字列をPOSTし続けるテストです。
+
+https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-resource/test-item/mattermost-create-post-item.csv
+
+## チャネルへのメッセージ参照
+
+最大で２００多重でPOSTしたメッセージを取得し続けるテストです。
+
+https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-resource/test-item/mattermost-get-post-item.csv
+
+# テスト結果
+
+テスト結果はこちらに自動的に格納されます。
+
+## チャネルへのメッセージ投稿
+
+https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-resource/test-result/mattermost/mattermost-create-post-item-result.csv
+
+## チャネルへのメッセージ参照
+
+https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-resource/test-result/mattermost/mattermost-get-post-item-result.csv
 
 # 前提とする環境
 
