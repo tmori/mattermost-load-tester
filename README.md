@@ -31,6 +31,11 @@ https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-res
 # テスト結果
 
 テスト結果はこちらに自動的に格納されます。
+なお、格納されているデータは、以下の環境で測定したものです。
+
+* CPU: 8コア
+* メモリ：16GB
+* ディスク：15GB
 
 ## チャネルへのメッセージ投稿
 
@@ -98,6 +103,29 @@ https://blog.apar.jp/linux/5336/
   *  Mattermost サーバー側のdb-backup-restoreのディレクトリパスです。
 * MATTERMOST_DB_BKP_DIR
   *  Mattermost サーバー側のバックアップファイル配置ディレクトリパスです。
+
+
+# テスト実行方法
+
+docker コンテナに入り、以下のディレクトリに移動します。
+
+★注意：ssh の設定は、コンテナからログアウトすると消えてしまいますので、毎回、実施しないといけないです。。
+
+```
+cd /root/workspace/web-server-load-tester
+```
+
+## チャネルへのメッセージ投稿のテストを実行する場合
+
+```
+bash ../load-test-resource/test-scripts/create-post-test.bash
+```
+
+## チャネルへのメッセージ参照のテストを実行する場合
+
+```
+bash ../load-test-resource/test-scripts/get-post-test.bash
+```
 
 
 # 終了方法
