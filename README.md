@@ -37,6 +37,11 @@ https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-res
 * メモリ：16GB
 * ディスク：15GB
 
+ちなみに、多重テスト実施すると、500, 401, 404 のエラーが返る場合があります。
+Mattermostのconfig.json の 以下のパラメータを調整することで回避することができます。
+
+https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html
+
 ## チャネルへのメッセージ投稿
 
 https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-resource/test-result/mattermost/mattermost-create-post-item-result.csv
