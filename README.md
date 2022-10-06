@@ -74,6 +74,32 @@ bash install.bash
 https://blog.apar.jp/linux/5336/
 
 
+# 環境変数の設定
+
+本ツールを実行するには以下の環境変数設定ファイル(env.bash)を編集する必要があります。
+
+* ./mattermost-initializer/db-backup-restore/env/env.bash
+* ./mattermost-initializer/env/env.bash
+* ./web-server-load-tester/env/env.bash
+
+設定内容は、各リポジトリのREADMEを参照ください。
+
+ただし、`./web-server-load-tester/env/env.bash`については、以下の項目は本ツール向けに追加しておりますので、環境に応じて変更してください。
+
+* TEST_TARGET_TOOL_DIR
+  * Mattermost サーバー側の web-server-load-tester のディレクトリパスです。
+* MATTERMOST_TOOL_DIR
+  * Mattermost サーバー側の mattermost-initializer のディレクトリパスです。
+* MATTERMOST_ROOT_USER
+  * Mattermost の管理者用ユーザIDです。
+* MATTERMOST_ROOT_PASSWD
+  * Mattermost の管理者用ユーザIDのパスワードです。
+* MATTERMOST_DB_BKP_TOOL_DIR
+  *  Mattermost サーバー側のdb-backup-restoreのディレクトリパスです。
+* MATTERMOST_DB_BKP_DIR
+  *  Mattermost サーバー側のバックアップファイル配置ディレクトリパスです。
+
+
 # 終了方法
 
 ```
