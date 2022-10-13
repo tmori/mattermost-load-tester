@@ -31,6 +31,9 @@ https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-res
 # テスト結果
 
 テスト結果はこちらに自動的に格納されます。
+
+https://github.com/tmori/mattermost-load-tester/blob/main/php/hako/load-test-resource/test-result/mattermost
+
 なお、格納されているデータは、以下の環境で測定したものです。
 
 * CPU: 8コア
